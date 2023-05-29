@@ -35,6 +35,9 @@ Route::get('/test3',function(){
 use \App\Http\Controllers\TestController;
 Route::resource('/testcn1', TestController::class);
 
+
+
+
 Route::get('/method', function () {
     return 'GET Method!!';
 });
@@ -46,3 +49,7 @@ Route::get('/query', function(Request $request){
 Route::get('/segment2/{id?}', function($id = 'base'){
     return 'segment2 ID : '.$id;
 });
+
+
+use App\Http\Controllers\BladeController;
+Route::get('blade', [BladeController::class, 'index'])->name('blade.index');
