@@ -52,4 +52,4 @@ Route::get('/segment2/{id?}', function($id = 'base'){
 
 
 use App\Http\Controllers\BladeController;
-Route::get('blade', [BladeController::class, 'index'])->name('blade.index');
+Route::get('/blade', [BladeController::class, 'index'])->name('blade.index');

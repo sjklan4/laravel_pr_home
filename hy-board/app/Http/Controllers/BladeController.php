@@ -13,7 +13,7 @@ class BladeController extends Controller
             ,'birthday' => '19900606'
             ,'addr' => '구미'
             ,'tel' => '0102212593'
-            
         ];
+        return view('blad')->with('data',$arr);
     }
 }
