@@ -38,18 +38,25 @@ Route::resource('/testcn1', TestController::class);
 
 
 
-Route::get('/method', function () {
-    return 'GET Method!!';
-});
 
-Route::get('/query', function(Request $request){
-    return $request->id.", ".$request->name.",".$request->title;
-});
+// Route::get('/method', function () {
+//     return 'GET Method!!';
+// });
 
-Route::get('/segment2/{id?}', function($id = 'base'){
-    return 'segment2 ID : '.$id;
-});
+// Route::get('/query', function(Request $request){
+//     return $request->id.", ".$request->name.",".$request->title;
+// });
+
+// Route::get('/segment2/{id?}', function($id = 'base'){
+//     return 'segment2 ID : '.$id;
+// });
 
 
 use App\Http\Controllers\BladeController;
 Route::get('/blade', [BladeController::class, 'index'])->name('blade.index');
+Route::get('/write',[BladeController::class, 'write'])->name('blade.write');
+Route::post('/write',[BladeController::class, 'insert'])->name('blade.insert');
+
+
+
+

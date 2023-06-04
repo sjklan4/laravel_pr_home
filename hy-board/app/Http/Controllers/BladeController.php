@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class BladeController extends Controller
 {
@@ -16,4 +18,28 @@ class BladeController extends Controller
         ];
         return view('blad')->with('data',$arr);
     }
+
+
+    function write(){
+        return view('write');
+    }
+
+
+
+
+
+
+    function insert(Request $req){
+        $date = Carbon::now();
+    DB::insert("INSERT INTO hyboardprs(Ltitle,Lcontent,created_at,updated_at,deleted_at,deleted_flg)
+    VALUES(?,?,?,?,?)",[$req->Ltitle,$req->Lcontent,$date]);
+    
+    return redirect()->route('blade.index');
+    }
+
+
+
+
+
+   
 }

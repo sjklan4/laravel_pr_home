@@ -17,4 +17,7 @@
 @else
     <span>모든 조건 탈락</span>
 @endif
+
+
+    <button onclick="location.href='{{route('blade.write')}}'">작성</button>
 @endsection
