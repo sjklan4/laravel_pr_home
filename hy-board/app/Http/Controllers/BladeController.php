@@ -31,15 +31,11 @@ class BladeController extends Controller
 
     function insert(Request $req){
         $date = Carbon::now();
-    DB::insert("INSERT INTO hyboardprs(Ltitle,Lcontent,created_at,updated_at,deleted_at,deleted_flg)
-    VALUES(?,?,?,?,?)",[$req->Ltitle,$req->Lcontent,$date]);
+    DB::insert("INSERT INTO hyboardprs(list,Ltitle,Lcontent,created_at,updated_at)
+    VALUES(?,?,?,?,?)",[1,$req->Ltitle,$req->Lcontent,$date,$date]);
     
     return redirect()->route('blade.index');
     }
 
 
-
-
-
-   
 }
