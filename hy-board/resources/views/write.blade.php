@@ -7,11 +7,15 @@
     <title>write</title>
 </head>
 <body>
-    
+    <form action="{{route('blade.insert')}}" method="post">
+        @csrf
     <label for="title">제목 : </label>
-    <input type="text">
+    <input type="text" name="Ltitle" id="Ltitle">
+    <br>
+    <label for="content">내용 : </label>
+    <input type="text" name="Lcontent" id="Lcontent">
 
-
-    
+    <button type="submit">작성</button>
+    </form>
 </body>
 </html>
